@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero de Puertas Lógicas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <select id="gateSelector" class="gate-selector">
+      <option value="AND">Puerta Lógica AND</option>
+      <option value="OR">Puerta Lógica OR</option>
+      <option value="NOT">Puerta Lógica NOT</option>
+      <option value="NAND">Puerta Lógica NAND</option>
+      <option value="NOR">Puerta Lógica NOR</option>
+      <option value="XOR">Puerta Lógica XOR</option>
+      <option value="XNOR">Puerta Lógica XNOR</option>
+    </select>
+    <h1 id="gateTitle">Puerta Lógica AND</h1>
+    <div class="gate-diagram">
+      <div class="input-container" id="checkboxContainer">
+        <!-- Genera más checkboxes según sea necesario -->
+        <label class="checkbox-label unchecked">
+          <input type="checkbox" class="checkbox">
+          <span>0</span>
+        </label>
+        <label class="checkbox-label unchecked">
+          <input type="checkbox" class="checkbox">
+          <span>0</span>
+        </label>
+        <!-- Añade más etiquetas de checkbox aquí -->
+      </div>
+      <img src="img/and.png" alt="Diagrama de la Puerta AND" id="gateImage" width="200" class="gate-image">
+      <div class="output-container">
+        <div class="result-label" id="result">0</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <table class="truth-table" id="truthTable">
+      <thead>
+        <tr>
+          <th>A</th>
+          <th>B</th>
+          <th id="operationHeader">A^B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-values="00">
+          <td class="false">0</td>
+          <td class="false">0</td>
+          <td class="false" id="result00">0</td>
+        </tr>
+        <tr data-values="01">
+          <td class="false">0</td>
+          <td class="true">1</td>
+          <td class="false" id="result01">0</td>
+        </tr>
+        <tr data-values="10">
+          <td class="true">1</td>
+          <td class="false">0</td>
+          <td class="false" id="result10">0</td>
+        </tr>
+        <tr data-values="11">
+          <td class="true">1</td>
+          <td class="true">1</td>
+          <td class="true" id="result11">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="logic.js"></script>
+
+</body>
+</html>
